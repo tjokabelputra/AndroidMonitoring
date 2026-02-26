@@ -1,4 +1,4 @@
-Target,cpu_usage,cpu_usage,cpu_usage,memory_usage,memory_usage,memory_usage,temperature,temperature,temperature,battery_level,battery_level,battery_level,battery_drain,battery_drain,battery_drain,upload_speed_kbps,upload_speed_kbps,upload_speed_kbps,download_speed_kbps,download_speed_kbps,download_speed_kbps,brightness,brightness,brightness
-,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max
-0,71.06157112526539,30.999999999999996,100.0,78.98301486199576,65.0,82.0,35.3583864118896,32.2,37.1,40.11464968152866,33.0,52.0,-529.9490445859873,-987.0,-98.0,1.3426023149532909,0.0,8.844257,19.623631899029725,0.0,133.72989,30.6963906581741,23.0,40.0
-1,41.25218914185639,24.0,100.0,71.88966725043782,61.0,79.0,33.57600700525394,32.0,38.4,49.03502626970228,41.0,54.0,-234.42556917688268,-834.0,-10.0,1.7628572600323993,0.0,8.990784,23.70965378218389,0.0,129.80138,24.313485113835377,23.0,40.0
+Target,cpu_usage,cpu_usage,cpu_usage,memory_usage,memory_usage,memory_usage,temperature,temperature,temperature,battery_drain,battery_drain,battery_drain,upload_speed_kbps,upload_speed_kbps,upload_speed_kbps,download_speed_kbps,download_speed_kbps,download_speed_kbps
+,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max,mean,min,max
+0,71.07802874743327,32.0,100.0,78.91581108829568,69.0,82.0,35.36406570841889,32.0,38.4,-525.4147843942505,-987.0,-82.0,1.393203655275154,0.0,8.844257,19.19133354098357,0.0,133.72989
+1,40.37837837837838,24.0,100.0,71.74414414414414,61.0,79.0,33.51963963963964,32.0,38.4,-229.8846846846847,-814.0,-10.0,1.7305711814459461,0.0,8.990784,24.206781080380182,0.0,129.80138
