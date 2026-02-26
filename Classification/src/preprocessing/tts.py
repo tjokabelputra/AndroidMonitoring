@@ -15,7 +15,7 @@ def load_data(config):
     return df
 
 def split_dataset(df):
-    X = df.drop(columns=['Target'])
+    X = df.drop(columns=['Target', 'timestamp'])
     y = df['Target']
 
     X_train, X_temp, y_train, y_temp = train_test_split(
