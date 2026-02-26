@@ -1,0 +1,3 @@
+data_dir: ~/AndroidMonitoring/Clustering/data
+save_dir: ~/AndroidMonitoring/Classification/split
+model_dir: ~/AndroidMonitoring/Classification/model
