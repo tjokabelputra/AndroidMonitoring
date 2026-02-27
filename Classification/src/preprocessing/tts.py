@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 def load_data(config):
     data = os.path.expanduser(
-        os.path.join(config['data_dir'], "original_pca.csv")
+        os.path.join(config['data_dir'], "Original.csv")
     )
 
     print("Loading: ", data)
@@ -39,7 +39,7 @@ def save_splits(X_train, X_val, X_test, y_train, y_val, y_test, config):
     test_df = pd.concat([X_test, y_test], axis=1)
 
     save_dir = os.path.expanduser(config['save_dir'])
-    os.mkdir(save_dir)
+    os.makedirs(os.path.dirname(save_dir), exist_ok=True)
 
     train_path = os.path.join(config['save_dir'], 'train.csv')
     val_path = os.path.join(config['save_dir'], 'val.csv')

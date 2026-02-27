@@ -1,0 +1,4 @@
+dataset_dir: ~/AndroidMonitoring/Clustering/data/dataset
+param_dir: ~/AndroidMonitoring/Clustering/data/param
+result_dir: ~/AndroidMonitoring/Clustering/data/result
+model_dir: ~/AndroidMonitoring/Clustering/model
