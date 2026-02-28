@@ -35,9 +35,9 @@ def elbow_method(df):
     print("Best K: ", best_k)
 
 def pca_transform(X):
-    pca = PCA(n_components=3, random_state=42)
+    pca = PCA(n_components=2, random_state=42)
     X_pca = pca.fit_transform(X)
-    PCA_numbers = pd.DataFrame(X_pca, columns=['PCA1', 'PCA2', 'PCA3'])
+    PCA_numbers = pd.DataFrame(X_pca, columns=['PCA1', 'PCA2'])
     components = pca.components_.tolist()
 
     return PCA_numbers, X_pca, components
@@ -86,7 +86,7 @@ def train_kmeans(df):
     df_kmeans = df.copy()
 
     X = df.select_dtypes(include=['float64','int64']).to_numpy()
-    model = KMeans(n_clusters=2, random_state=42)
+    model = KMeans(n_clusters=3, random_state=42)
     labels = model.fit_predict(X)
     df_kmeans['Target'] = labels
 
@@ -108,7 +108,7 @@ def train_pca(df):
     PCA_numbers, X_pca, components = pca_transform(X)
     save_pca_params(components)
 
-    model = KMeans(n_clusters=2, random_state=42)
+    model = KMeans(n_clusters=3, random_state=42)
     labels = model.fit_predict(X_pca)
     PCA_numbers['Target'] = labels
 

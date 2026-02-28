@@ -16,8 +16,8 @@ def train(config):
     Model = ANN(
         input_dim = input_dim,
         layer=1,
-        neuron=16,
-        dropout_rate=0.2,
+        neuron=32,
+        dropout_rate=0.0,
         learning_rate=0.001,
     )
 

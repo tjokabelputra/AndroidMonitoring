@@ -20,14 +20,14 @@ class ANN:
             model.add(layers.BatchNormalization())
             model.add(layers.Dropout(self.dropout_rate))
 
-        model.add(layers.Dense(1, activation='sigmoid'))
+        model.add(layers.Dense(3, activation='softmax'))
         model.summary()
 
         model.compile(
             optimizer=optimizers.Adam(learning_rate=self.learning_rate),
-            loss="binary_crossentropy",
+            loss="sparse_categorical_crossentropy",
             metrics=[
-                tf.keras.metrics.BinaryAccuracy(name="accuracy"),
+                tf.keras.metrics.SparseCategoricalAccuracy(name="accuracy"),
             ]
         )
 
