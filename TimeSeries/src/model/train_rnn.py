@@ -14,8 +14,8 @@ def train(config):
         window=window,
         feature_count=feature_count,
         horizon=horizon,
-        n1_size=20,
-        n2_size=10,
+        n1_size=10,
+        n2_size=5,
         learning_rate=0.001,
     )
 

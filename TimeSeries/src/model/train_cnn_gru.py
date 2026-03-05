@@ -16,8 +16,8 @@ def train(config):
         horizon = horizon,
         f1_count=4,
         f2_count=8,
-        n1_count=15,
-        n2_count=10,
+        n1_count=5,
+        n2_count=5,
         learning_rate=0.001,
     )
 

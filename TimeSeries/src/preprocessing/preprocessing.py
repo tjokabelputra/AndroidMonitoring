@@ -50,7 +50,7 @@ def save_param(config, mean_feature, scale_feature, mean_target, scale_target):
     print("Param Saved")
 
 def setup_data(feature, target):
-    window_size = 150
+    window_size = 45
     horizon = 15
     target = target.flatten()
     X = []
