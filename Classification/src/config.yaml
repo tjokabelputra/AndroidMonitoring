@@ -1,3 +1,4 @@
 data_dir: ~/AndroidMonitoring/Clustering/data/result
 save_dir: ~/AndroidMonitoring/Classification/split
 model_dir: ~/AndroidMonitoring/Classification/model
+tflite_dir: ~/AndroidMonitoring/Classification/model/tflite

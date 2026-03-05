@@ -2,3 +2,4 @@ dataset_dir: ~/AndroidMonitoring/Clustering/data/dataset
 param_dir: ~/AndroidMonitoring/TimeSeries/data/param
 tts_dir: ~/AndroidMonitoring/TimeSeries/data/split
 model_dir: ~/AndroidMonitoring/TimeSeries/data/model
+tflite_dir: ~/AndroidMonitoring/TimeSeries/data/model/tflite
