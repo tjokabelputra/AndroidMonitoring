@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 
 def load_data(config):
     data = os.path.expanduser(
-        os.path.join(config["dataset_dir"], "dataset.csv")
+        os.path.join(config["dataset_dir"], "dataset_time_series.csv")
     )
 
     print("Loading: ", data)
