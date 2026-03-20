@@ -24,11 +24,11 @@ def convert():
     for i in range(len(MODEL_DIR)):
         model = tf.keras.models.load_model(MODEL_DIR[i])
         converter = tf.lite.TFLiteConverter.from_keras_model(model)
+
         converter.target_spec.supported_ops = [
-            tf.lite.OpsSet.TFLITE_BUILTINS,
-            tf.lite.OpsSet.SELECT_TF_OPS
+            tf.lite.OpsSet.TFLITE_BUILTINS
         ]
-        converter._experimental_lower_tensor_list_ops = False
+
         tflite_model = converter.convert()
 
         with open(SAVE_DIR[i], "wb") as f:

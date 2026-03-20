@@ -21,7 +21,7 @@ def data_preparation(config, df):
     target_scaler = StandardScaler()
 
     feature_scaled = feature_scaler.fit_transform(
-        df.drop(columns=['timestamp','temperature', 'battery_drain','battery_charging'])
+        df.drop(columns=['timestamp', 'battery_drain'])
     )
     target_scaled = target_scaler.fit_transform(
         df[['battery_drain']]

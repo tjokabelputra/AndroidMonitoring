@@ -43,13 +43,15 @@ class CNN_RNN:
             layers.SimpleRNN(
                 self.n1_count,
                 return_sequences=True,
-                activation="tanh"
+                activation="tanh",
+                unroll=True
             )
         )
         model.add(
             layers.SimpleRNN(
                 self.n2_count,
-                activation="tanh"
+                activation="tanh",
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon, activation="selu"))
@@ -130,13 +132,15 @@ class CNN_LSTM:
             layers.LSTM(
                 self.n1_count,
                 return_sequences=True,
-                activation="relu"
+                activation="relu",
+                unroll=True
             )
         )
         model.add(
             layers.LSTM(
                 self.n2_count,
-                activation="relu"
+                activation="relu",
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon))
@@ -217,13 +221,15 @@ class CNN_GRU:
             layers.GRU(
                 self.n1_count,
                 return_sequences=True,
-                activation="relu"
+                activation="relu",
+                unroll=True
             )
         )
         model.add(
             layers.GRU(
                 self.n2_count,
-                activation="selu"
+                activation="selu",
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon))

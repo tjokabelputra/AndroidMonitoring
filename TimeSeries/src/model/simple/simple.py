@@ -18,13 +18,15 @@ class RNN:
                 self.n1_size,
                 return_sequences=True ,
                 input_shape=(self.window, self.feature_count),
-                activation='tanh'
+                activation='tanh',
+                unroll=True
             )
         )
         model.add(
             layers.SimpleRNN(
                 self.n2_size,
-                activation='tanh'
+                activation='tanh',
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon))
@@ -81,13 +83,15 @@ class LSTM:
                 self.n1_size,
                 return_sequences=True,
                 input_shape=(self.window, self.feature_count),
-                activation='relu'
+                activation='relu',
+                unroll=True
             )
         )
         model.add(
             layers.LSTM(
                 self.n2_size,
-                activation='relu'
+                activation='relu',
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon))
@@ -144,13 +148,15 @@ class GRU:
                 self.n1_size,
                 return_sequences=True,
                 input_shape=(self.window, self.feature_count),
-                activation='relu'
+                activation='relu',
+                unroll=True
             )
         )
         model.add(
             layers.GRU(
                 self.n2_size,
-                activation='selu'
+                activation='selu',
+                unroll=True
             )
         )
         model.add(layers.Dense(self.horizon))
