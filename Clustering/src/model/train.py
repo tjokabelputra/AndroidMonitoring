@@ -8,7 +8,6 @@ from sklearn.metrics import silhouette_score, davies_bouldin_score, calinski_har
 from sklearn.cluster import KMeans, DBSCAN
 from yellowbrick.cluster import KElbowVisualizer
 
-
 def load_dataset(config):
     data = os.path.expanduser(
         os.path.join(config['dataset_dir'], "cleaned.csv")
@@ -108,12 +107,25 @@ def train_pca(df):
     PCA_numbers, X_pca, components = pca_transform(X)
     save_pca_params(components)
 
-    model = KMeans(n_clusters=3, random_state=42)
-    labels = model.fit_predict(X_pca)
-    PCA_numbers['Target'] = labels
+    #KMeans
+    df_kmeans = PCA_numbers.copy()
 
-    evaluate_model(X_pca, labels, "PCA")
-    save_result(PCA_numbers, model, 'PCA')
+    kmeans_model = KMeans(n_clusters=3, random_state=42)
+    kmeans_labels = kmeans_model.fit_predict(X_pca)
+    df_kmeans['Target'] = kmeans_labels
+
+    evaluate_model(X_pca, kmeans_labels, "PCA + KMeans")
+    save_result(df_kmeans, kmeans_model, 'PCA_KMeans')
+
+    #DBSCAN
+    df_dbscan = PCA_numbers.copy()
+
+    dbscan_model = DBSCAN(eps=0.5, min_samples=5)
+    dbscan_labels = dbscan_model.fit_predict(X_pca)
+    df_dbscan['Target'] = dbscan_labels
+
+    evaluate_model(X_pca, dbscan_labels, "PCA + DBSCAN")
+    save_result(df_dbscan, dbscan_model, 'PCA_DBSCAN')
 
 if __name__ == "__main__":
     config = tools.load_config()
